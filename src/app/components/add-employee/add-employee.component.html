@@ -1,0 +1,31 @@
+<div>
+    <div class="submit-form">
+        <div *ngIf="!submitted">
+            <div class="form-group">
+                <label for="name">Employee Name</label>
+                <input type="text" class="form-control" id="name" required [(ngModel)]="employee.name" name="name" />
+            </div>
+
+            <div class="form-group">
+                <label for="designation">Designation</label>
+                <input class="form-control" id="designation" required [(ngModel)]="employee.designation"
+                    name="designation" />
+            </div>
+            <div class="form-group">
+                <label for="Age">Age</label>
+                <input class="form-control" id="age" required [(ngModel)]="employee.age" name="age" />
+            </div>
+            <div class="form-group">
+                <label for="salary">Salary</label>
+                <input class="form-control" id="salary" required [(ngModel)]="employee.salary" name="salary" />
+            </div>
+            <p></p>
+            <button (click)="saveEmployee()" class="btn btn-success">Submit</button>
+        </div>
+
+        <div *ngIf="submitted">
+            <h4>Employee Data was submitted successfully!</h4>
+            <button class="btn btn-success" (click)="newEmployee()">Add</button>
+        </div>
+    </div>
+</div>

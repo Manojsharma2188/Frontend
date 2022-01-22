@@ -1,0 +1,41 @@
+<div>
+  <div *ngIf="currentEmployee.id" class="edit-form">
+    <h4>Employee</h4>
+    <form>
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" id="name" [(ngModel)]="currentEmployee.name" name="name" />
+      </div>
+      <div class="form-group">
+        <label for="designation">Designation</label>
+        <input type="text" class="form-control" id="designation" [(ngModel)]="currentEmployee.designation"
+          name="designation" />
+      </div>
+      <div class="form-group">
+        <label for="age">Age</label>
+        <input type="text" class="form-control" id="age" [(ngModel)]="currentEmployee.age" name="age" />
+      </div>
+      <div class="form-group">
+        <label for="salary">Salary</label>
+        <input type="text" class="form-control" id="salary" [(ngModel)]="currentEmployee.salary" name="salary" />
+      </div>
+    </form>
+    <div>
+      <p></p>
+    </div>
+    <button class="btn btn-primary" *ngIf="roles[0]=='ROLE_ADMIN'" (click)="deleteEmployee()">
+      Delete
+    </button>
+    &nbsp;&nbsp;&nbsp;
+    <button type="submit" class="btn btn-primary" (click)="updateEmployee()">
+      Update
+    </button>
+
+    <p>{{ message }}</p>
+
+  </div>
+  <div *ngIf="!currentEmployee.id">
+    <br />
+    <p>Cannot access this Employee Data...</p>
+  </div>
+</div>
